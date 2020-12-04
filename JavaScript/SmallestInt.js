@@ -1,15 +1,19 @@
 function solution(A) {
     // write your code in JavaScript (Node.js 8.9.4)
-    let smallest = Math.max(...A)
-    console.log(smallest)
-    for (let i = 0; i < Math.max(...[A]); i++){
-        console.log(i)
-        if (A.includes(i) === false){
-            smallest = i;
-            break;
-        }
+    
+    if (!A.includes(1)){
+        return 1
     }
-    return smallest
+    
+    for (let i = 1; i < Math.max(...A)+1; i++){
+        if (A.includes(i) === false){
+            return i
+        } if ( i === Math.max(...A)){
+            return i+1
+        } 
+        
+    }
 }
+
 
 console.log(solution([1,3,4,5,6]))
